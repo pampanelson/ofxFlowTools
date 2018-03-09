@@ -46,9 +46,10 @@ namespace flowTools {
 									   float alpha = min (0.5 - (age / life) * 0.5,age * 5.);
 									   alpha *= 0.5 + (cos((age + size) * TwinkleSpeed * mass) + 1.0) * 0.5;
 									   alpha = max(alpha, 0.0);
-									   
-									   gl_FrontColor = vec4(vec3(1.0), alpha);
-									   
+									   // change color to red
+									   gl_FrontColor = vec4(1.0,.0,.0, alpha);
+//									   gl_FrontColor = vec4(vec3(1.0), alpha);
+
 								   }
 								   );
 			
@@ -96,7 +97,9 @@ namespace flowTools {
 									   alpha *= 0.5 + (cos((age + size) * TwinkleSpeed * mass) + 1.0) * 0.5;
 									   alpha = max(alpha, 0.0);
 									   
-									   colorVarying = vec4(vec3(1.0), alpha);
+									   // change color to red
+									   colorVarying = vec4(1.0,.0,.0, alpha);
+//									   colorVarying = vec4(vec3(1.0), alpha);
 								   }
 								);
 			
@@ -117,7 +120,9 @@ namespace flowTools {
 									  if(d > r)
 										  discard;
 									  else
-										  fragColor = colorVarying * (1.0, 1.0, 1.0, 1.0 - pow(r, 2.5));
+										  // change color to red
+										  fragColor = colorVarying * (1.0, .0, .0, 1.0 - pow(r, 2.5));
+//										  fragColor = colorVarying * (1.0, 1.0, 1.0, 1.0 - pow(r, 2.5));
 								  }
 								  );
 			
