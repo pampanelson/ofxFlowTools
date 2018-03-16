@@ -29,6 +29,11 @@ namespace flowTools {
 								   uniform sampler2DRect positionTexture;
 								   uniform sampler2DRect ALMSTexture;
 								   uniform float TwinkleSpeed;
+								   uniform float ParticleColorR;
+								   uniform float ParticleColorG;
+								   uniform float ParticleColorB;
+								   uniform float ParticleColorA;
+
 								   
 								   void main(){
 									   
@@ -47,7 +52,12 @@ namespace flowTools {
 									   alpha *= 0.5 + (cos((age + size) * TwinkleSpeed * mass) + 1.0) * 0.5;
 									   alpha = max(alpha, 0.0);
 									   // change color to red
-									   gl_FrontColor = vec4(1.0,.0,.0, alpha);
+//									   gl_FrontColor = vec4(1.0,.0,.0, alpha);
+									   
+									   // change color to passing r g b  --------------------- my
+									   gl_FrontColor = vec4(ParticleColorR,ParticleColorG,ParticleColorB,alpha);
+
+									   
 //									   gl_FrontColor = vec4(vec3(1.0), alpha);
 
 								   }
@@ -66,6 +76,10 @@ namespace flowTools {
 								   uniform	mat4 textureMatrix;
 								   uniform	sampler2DRect PositionTexture;
 								   uniform	sampler2DRect ALMSTexture;
+								   uniform float ParticleColorR;
+								   uniform float ParticleColorG;
+								   uniform float ParticleColorB;
+						
 								   
 								   in vec4	position;
 								   in vec2	texcoord;
@@ -98,8 +112,14 @@ namespace flowTools {
 									   alpha = max(alpha, 0.0);
 									   
 									   // change color to red
-									   colorVarying = vec4(1.0,.0,.0, alpha);
-//									   colorVarying = vec4(vec3(1.0), alpha);
+//									   colorVarying = vec4(1.0,.0,.0, alpha);
+									   
+									   // change color to passing r g b  --------------------- my
+									   colorVarying = vec4(ParticleColorR,ParticleColorG,ParticleColorB,alpha);
+
+									   
+									   
+									   //colorVarying = vec4(vec3(1.0), alpha);
 								   }
 								);
 			
@@ -110,7 +130,6 @@ namespace flowTools {
 			fragmentShader = GLSL150(
 								  in vec4 colorVarying;
 								  out vec4 fragColor;
-								  
 								  void main()
 								  {
 									  vec2 p = gl_PointCoord * 2.0 - vec2(1.0);
@@ -121,8 +140,8 @@ namespace flowTools {
 										  discard;
 									  else
 										  // change color to red
-										  fragColor = colorVarying * (1.0, .0, .0, 1.0 - pow(r, 2.5));
-//										  fragColor = colorVarying * (1.0, 1.0, 1.0, 1.0 - pow(r, 2.5));
+										  //fragColor = colorVarying * (1.0, .0, .0, 1.0 - pow(r, 2.5));
+										  fragColor = colorVarying * (1.0, 1.0, 1.0, 1.0 - pow(r, 2.5));
 								  }
 								  );
 			
@@ -134,12 +153,22 @@ namespace flowTools {
 		
 	public:
 		
-		void update(ofVboMesh &particleVbo, int _numParticles, ofTexture& _positionTexture, ofTexture& _ALMSTexture, float _twinkleSpeed){
+		// my add particle color into update
+		void update(ofVboMesh &particleVbo, int _numParticles, ofTexture& _positionTexture, ofTexture& _ALMSTexture, float _twinkleSpeed,
+			float _particleColorR,
+			float _particleColorG,
+			float _particleColorB){
 			shader.begin();
 			shader.setUniformTexture("PositionTexture", _positionTexture, 0);
 			shader.setUniformTexture("ALMSTexture", _ALMSTexture, 1);
 			shader.setUniform1f("TwinkleSpeed", _twinkleSpeed);
 			
+			// my
+			shader.setUniform1f("ParticleColorR",_particleColorR/255);
+			shader.setUniform1f("ParticleColorG",_particleColorG/255);
+			shader.setUniform1f("ParticleColorB",_particleColorB/255);
+
+
 			bool dinges = true;
 			//glEnable(GL_POINT_SMOOTH);
 			glEnable(GL_VERTEX_PROGRAM_POINT_SIZE);

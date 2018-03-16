@@ -54,6 +54,10 @@ namespace flowTools {
 		void	setSizeSpread(float value) { sizeSpread.set(value); }
 		void	setGravity(ofVec2f value) { gravity.set(value); }
 		
+		void	setParticleColorR(float value) { particleColorR.set(value); }
+		void	setParticleColorG(float value) { particleColorG.set(value); }
+		void	setParticleColorB(float value) { particleColorB.set(value); }
+
 		ofParameterGroup parameters;
 	private:
 		ofParameter<bool>	bIsActive;
@@ -69,7 +73,11 @@ namespace flowTools {
 		ofParameter<float>	sizeSpread;
 		ofParameter<float>	twinkleSpeed;
 		ofParameter<ofVec2f>gravity;
-		
+		// my
+		ofParameter<float>	particleColorR;
+		ofParameter<float>	particleColorG;
+		ofParameter<float>	particleColorB;
+
 		float	simulationWidth;
 		float	simulationHeight;
 		float	numParticlesX;
