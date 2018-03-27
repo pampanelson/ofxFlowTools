@@ -164,9 +164,9 @@ namespace flowTools {
 			shader.setUniform1f("TwinkleSpeed", _twinkleSpeed);
 			
 			// my
-			shader.setUniform1f("ParticleColorR",_particleColorR/255);
-			shader.setUniform1f("ParticleColorG",_particleColorG/255);
-			shader.setUniform1f("ParticleColorB",_particleColorB/255);
+			shader.setUniform1f("ParticleColorR",_particleColorR/255.0);
+			shader.setUniform1f("ParticleColorG",_particleColorG/255.0);
+			shader.setUniform1f("ParticleColorB",_particleColorB/255.0);
 
 
 			bool dinges = true;

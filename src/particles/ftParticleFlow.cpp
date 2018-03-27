@@ -37,6 +37,7 @@ namespace flowTools {
 	ftParticleFlow::ftParticleFlow(){
 		parameters.setName("particle flow");
 		parameters.add(bIsActive.set("active", true));
+	parameters.add(particleColor.set("particle color",ofColor(0,0,0),ofColor(0,0),ofColor(255,255)));
 		parameters.add(speed.set("speed", 20, 0, 100));
 		parameters.add(cellSize.set("cell size", 1.25, 0.0, 2.0));
 		parameters.add(birthChance.set("birth chance", 0.5, 0, 1));
@@ -50,10 +51,7 @@ namespace flowTools {
 		parameters.add(twinkleSpeed.set("twinkle speed", 11, 0, 20));
 		parameters.add(gravity.set("gravity", ofVec2f(0, 9.80665), ofVec2f(-10,-10), ofVec2f(10,10)));
 		
-		
-		parameters.add(particleColorR.set("particle color r",0, 1, 255));
-		parameters.add(particleColorG.set("particle color g",0, 1, 255));
-		parameters.add(particleColorB.set("particle color b",0, 1, 255));
+	
 		
 	}
 	
@@ -155,11 +153,9 @@ namespace flowTools {
 		ofTranslate(_x, _y);
 		ofScale(_width / numParticlesX, _height / numParticlesY);
 		drawParticleShader.update(particleMesh, numParticles, particlePositionSwapBuffer.getTexture(), particleAgeLifespanMassSizeSwapBuffer.getTexture(), twinkleSpeed.get(),
-								  // add my particle color parameters
-								  particleColorR.get(),
-								  particleColorG.get(),
-								  particleColorB.get()
-								  );
+			particleColor.get().r,
+			particleColor.get().g,
+			particleColor.get().b);
 		
 		ofPopView();
 	}
