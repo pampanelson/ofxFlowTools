@@ -53,7 +53,6 @@ namespace flowTools {
 		void	setSize(float value) { size.set(value); }
 		void	setSizeSpread(float value) { sizeSpread.set(value); }
 		void	setGravity(ofVec2f value) { gravity.set(value); }
-		
 		void	setParticleColor(ofColor _color){
 			particleColor.set(_color);
 		}
