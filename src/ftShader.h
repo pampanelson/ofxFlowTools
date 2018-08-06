@@ -40,6 +40,8 @@ namespace flowTools {
 									 void main()
 									 {
 										 gl_FragColor = vec4(0.0,1.0,0.0,1.0);
+										 // pampa try nothing to do with fluid color
+										 
 									 }
 									 );
 		}
@@ -70,6 +72,8 @@ namespace flowTools {
 									 void main()
 									 {
 										 fragColor = vec4(0.0,1.0,0.0,1.0);
+										 // nothing to with fluid color
+										
 									 }
 									 );
 		}

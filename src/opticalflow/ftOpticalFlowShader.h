@@ -78,6 +78,10 @@ namespace flowTools {
 										   
 										   // set color
 										   gl_FragColor = vec4(flow, 0.0, 1.0);
+										   
+										   // nothing to do with fluid flow color ========== pampa
+
+
 									   }
 									   );
 			
@@ -142,7 +146,9 @@ namespace flowTools {
 									  flow *= vec2(force);
 									  
 									  // set color
+									  // nothing to do with fluid flow color ========== pampa
 									  fragColor = vec4(flow, 0.0, 1.0);
+									  
 								  }
 								  
 								  );
