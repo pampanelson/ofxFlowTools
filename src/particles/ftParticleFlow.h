@@ -24,7 +24,7 @@ namespace flowTools {
 		
 		void	update(float _deltaTime = 0);
 		
-		void	clear(){};
+		void	clear();
 		
 		void	draw(int _x, int _y) {draw(_x, _y, numParticlesX, numParticlesY);}
 		void	draw(int _x, int _y, int _width, int _height);

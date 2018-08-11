@@ -19,7 +19,7 @@ namespace flowTools {
 		void		setSource(ofTexture& _tex);
 		
 		//  add clear to release resources
-		void		clear(){};
+		void		clear();
 		
 		
 		ofTexture&	getTexture()		{ return getOpticalFlow(); }

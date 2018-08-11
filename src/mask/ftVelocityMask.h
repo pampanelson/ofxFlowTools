@@ -21,7 +21,7 @@ namespace flowTools {
 		
 		// clear to release resource
 		
-		void 	clear(){};
+		void 	clear();
 		
 		ofTexture& getTexture() {return getColorMask();};
 		ofTexture& getColorMask() {return colorMaskSwapBuffer.getBackTexture();};
