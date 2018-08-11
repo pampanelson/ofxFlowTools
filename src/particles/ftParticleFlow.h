@@ -24,6 +24,8 @@ namespace flowTools {
 		
 		void	update(float _deltaTime = 0);
 		
+		void	clear(){};
+		
 		void	draw(int _x, int _y) {draw(_x, _y, numParticlesX, numParticlesY);}
 		void	draw(int _x, int _y, int _width, int _height);
 		
@@ -91,11 +93,13 @@ namespace flowTools {
 		float	lastTime;
 		float	timeStep;
 		
-		ofTexture *flowVelocityTexture;
-		ofTexture *fluidVelocityTexture;
-		ofTexture *colorTexture;
 		
-		ofVboMesh	particleMesh;
+		// resource to clear release
+		ofTexture 				*flowVelocityTexture;
+		ofTexture 				*fluidVelocityTexture;
+		ofTexture 				*colorTexture;
+		
+		ofVboMesh				particleMesh;
 		
 		ftSwapBuffer			particleAgeLifespanMassSizeSwapBuffer;
 		ftSwapBuffer			particlePositionSwapBuffer;
@@ -106,6 +110,9 @@ namespace flowTools {
 		ftSwapBuffer			fluidVelocitySwapBuffer;
 		ftSwapBuffer			densitySwapBuffer;
 		ftFbo					obstacleBuffer;
+		
+		
+		
 		
 		ftInitPositionShader	initPositionShader;
 		ftDrawParticleShader	drawParticleShader;

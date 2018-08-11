@@ -191,5 +191,55 @@ namespace flowTools {
 		obstacleBuffer.end();
 		ofPopStyle();
 	}
+	
+	
+	void ftParticleFlow::clear(){
+		flowVelocityTexture->clear();
+		
+		fluidVelocityTexture->clear();
+		
+		colorTexture->clear();
+		
+		particleMesh.getVbo().clear();
+		
+		particleAgeLifespanMassSizeSwapBuffer.getBuffer()->clear();
+		particleAgeLifespanMassSizeSwapBuffer.getBackBuffer()->clear();
+		particleAgeLifespanMassSizeSwapBuffer.getTexture().clear();
+		particleAgeLifespanMassSizeSwapBuffer.getTexture().clear();
+		
+		particlePositionSwapBuffer.getBuffer()->clear();
+		particlePositionSwapBuffer.getBackBuffer()->clear();
+		particlePositionSwapBuffer.getTexture().clear();
+		particlePositionSwapBuffer.getTexture().clear();
+		
+		particleColorSwapBuffer.getBuffer()->clear();
+		particleColorSwapBuffer.getBackBuffer()->clear();
+		particleColorSwapBuffer.getTexture().clear();
+		particleColorSwapBuffer.getTexture().clear();
+		
+		particleHomeBuffer.clear();
+		
+		flowVelocitySwapBuffer.getBuffer()->clear();
+		flowVelocitySwapBuffer.getBackBuffer()->clear();
+		flowVelocitySwapBuffer.getTexture().clear();
+		flowVelocitySwapBuffer.getTexture().clear();
+		
+		fluidVelocitySwapBuffer.getBuffer()->clear();
+		fluidVelocitySwapBuffer.getBackBuffer()->clear();
+		fluidVelocitySwapBuffer.getTexture().clear();
+		fluidVelocitySwapBuffer.getTexture().clear();
+		
+		densitySwapBuffer.getBuffer()->clear();
+		densitySwapBuffer.getBackBuffer()->clear();
+		densitySwapBuffer.getTexture().clear();
+		densitySwapBuffer.getTexture().clear();
+		
+		obstacleBuffer.clear();
+		
+		
+		
+		
+		
+	}
 
 }
