@@ -9,6 +9,16 @@ namespace flowTools {
 	class ftVelocityField {
 	public:
 		
+		// clear in h file which no cpp file
+		void	clear(){
+			
+			velocityTexture->clear();
+			fieldMesh.clear();
+			fieldVbo.clear();
+			
+			
+		};
+		
 		void	setup(int _width, int _height){
 			width = _width;
 			height = _height;
@@ -82,6 +92,8 @@ namespace flowTools {
 		ofParameter<float>	maxArrowLength;
 		ofParameter<ofFloatColor>	color;
 
+		
+		
 		
 		ofTexture*	velocityTexture;
 		ofMesh		fieldMesh;
