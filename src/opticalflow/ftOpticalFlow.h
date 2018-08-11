@@ -18,6 +18,10 @@ namespace flowTools {
 		void		update(float _deltaTime = 0);
 		void		setSource(ofTexture& _tex);
 		
+		//  add clear to release resources
+		void		clear(){};
+		
+		
 		ofTexture&	getTexture()		{ return getOpticalFlow(); }
 		ofTexture&	getOpticalFlow()	{ return velocityBuffer.getTexture(); }
 		ofTexture&	getOpticalFlowDecay(){return (doTimeBlurDecay.get())? decayBuffer.getTexture(): velocityBuffer.getTexture(); }

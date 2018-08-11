@@ -124,5 +124,15 @@ namespace flowTools {
 		
 	}
 	
-	
+	void	ftOpticalFlow::clear(){
+		velocityTexture.clear();
+		velocityBuffer.clear();
+		decayBuffer.clear();
+		
+		sourceSwapBuffer.getBackBuffer()->clear();
+		sourceSwapBuffer.getBuffer()->clear();
+		sourceSwapBuffer.getTexture().clear();
+		sourceSwapBuffer.getBackTexture().clear();
+		
+	}
 }
