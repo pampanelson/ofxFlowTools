@@ -27,6 +27,10 @@ namespace flowTools {
 		
 		void	setup(int _simulationWidth, int _simulationHeight, int _densityWidth = 0, int _densityHeight = 0);
 		void    update(float _deltaTime = 0);
+		
+		void	clear(){};
+		
+		
 		void    draw() { draw(0, 0, densityWidth, densityHeight); }
 		void    draw(int _x, int _y) { draw(_x, _y, densityWidth, densityHeight); }
 		void    draw(int _x, int _y, float _width, float _height);
@@ -136,7 +140,8 @@ namespace flowTools {
 		ftClampLengthShader		clampLengthShader;
 		ftDensityFloatMultiplier	densityFloatMultiplierShader;
 		ftDensityVec2Multiplier		densityVec2MultiplierShader;
-				
+		
+		// resource need to clear 
 		ftSwapBuffer	densitySwapBuffer;
 		ftSwapBuffer	velocitySwapBuffer;
 		ftSwapBuffer	temperatureSwapBuffer;

@@ -405,4 +405,57 @@ namespace flowTools {
 		buffer.end();
 		ofPopStyle();
 	}
+	
+	
+	// clear to release recource
+	void ftFluidSimulation::clear(){
+		densitySwapBuffer.getBuffer()->clear();
+		densitySwapBuffer.getBackBuffer()->clear();
+		
+		densitySwapBuffer.getTexture().clear();
+		densitySwapBuffer.getBackTexture().clear();
+		
+		
+		velocitySwapBuffer.getBuffer()->clear();
+		velocitySwapBuffer.getBackBuffer()->clear();
+		
+		velocitySwapBuffer.getTexture().clear();
+		velocitySwapBuffer.getBackTexture().clear();
+		
+		
+		temperatureSwapBuffer.getBuffer()->clear();
+		temperatureSwapBuffer.getBackBuffer()->clear();
+		
+		temperatureSwapBuffer.getTexture().clear();
+		temperatureSwapBuffer.getBackTexture().clear();
+		
+		
+		pressureSwapBuffer.getBuffer()->clear();
+		pressureSwapBuffer.getBackBuffer()->clear();
+		
+		pressureSwapBuffer.getTexture().clear();
+		pressureSwapBuffer.getBackTexture().clear();
+		
+		
+		divergenceBuffer.clear();
+		
+		smokeBuoyancyBuffer.clear();
+		
+		vorticityFirstPassBuffer.clear();
+		
+		vorticitySecondPassBuffer.clear();
+		
+		addPressureBuffer.clear();
+
+		obstacleBuffer.clear();
+		
+		addTempObstacleBuffer.clear();
+		
+		combinedObstacleBuffer.clear();
+
+		
+
+	}
+	
+	
 }
