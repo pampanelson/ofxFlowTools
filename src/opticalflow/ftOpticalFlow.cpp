@@ -129,6 +129,10 @@ namespace flowTools {
 		velocityBuffer.clear();
 		decayBuffer.clear();
 		
+		
+		// clear swap buffer is enouch to release resource? ------------  TODO 2018/08/11
+		
+		
 		sourceSwapBuffer.getBackBuffer()->clear();
 		sourceSwapBuffer.getBuffer()->clear();
 		sourceSwapBuffer.getTexture().clear();
