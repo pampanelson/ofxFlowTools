@@ -93,4 +93,16 @@ namespace flowTools {
 		velocityTexture = &tex;
 		bVelocityTextureSet = true;
 	}
+	
+	
+	void ftVelocityMask::clear(){
+		densityTexture->clear();
+		velocityTexture->clear();
+		colorMaskSwapBuffer.getBackBuffer()->clear();
+		colorMaskSwapBuffer.getBackBuffer()->clear();
+		colorMaskSwapBuffer.getTexture().clear();
+		colorMaskSwapBuffer.getBackTexture().clear();
+		luminanceMaskFbo.clear();
+		
+	}
 }

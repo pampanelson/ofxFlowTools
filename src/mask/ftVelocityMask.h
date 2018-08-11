@@ -19,6 +19,10 @@ namespace flowTools {
 		void	setVelocity(ofTexture& tex);
 		void	update();
 		
+		// clear to release resource
+		
+		void 	clear(){};
+		
 		ofTexture& getTexture() {return getColorMask();};
 		ofTexture& getColorMask() {return colorMaskSwapBuffer.getBackTexture();};
 		ofTexture& getLuminanceMask() {return luminanceMaskFbo.getTexture();};
@@ -44,19 +48,21 @@ namespace flowTools {
 		
 		int					width;
 		int					height;
-		ofTexture*			densityTexture;
-		bool				bDensityTextureSet;
-		ofTexture*			velocityTexture;
-		bool				bVelocityTextureSet;
-		ftSwapBuffer		colorMaskSwapBuffer;
-		ftFbo				luminanceMaskFbo;
-		ftVelocityMaskShader VelocityMaskShader;
 		
-		ftEOGShader			EOGShader;
-		ftHSLShader			HSLShader;
-		ftContrastShader	contrastShader;
-		ftGaussianBlurShader gaussianBlurShader;
-		ftLuminanceShader	luminanceShader;
+		
+		ofTexture*				densityTexture;
+		bool					bDensityTextureSet;
+		ofTexture*				velocityTexture;
+		bool					bVelocityTextureSet;
+		ftSwapBuffer			colorMaskSwapBuffer;
+		ftFbo					luminanceMaskFbo;
+		
+		ftVelocityMaskShader 	VelocityMaskShader;
+		ftEOGShader				EOGShader;
+		ftHSLShader				HSLShader;
+		ftContrastShader		contrastShader;
+		ftGaussianBlurShader 	gaussianBlurShader;
+		ftLuminanceShader		luminanceShader;
 		
 	};
 }
