@@ -9,6 +9,13 @@ namespace flowTools {
 	class ftTemperatureField {
 	public:
 		
+		void 	clear(){
+			
+			temperatureTexture->clear();
+			fieldMesh.clear();
+			fieldVbo.clear();
+		};
+		
 		void	setup(int _width, int _height){
 			width = _width;
 			height = _height;
